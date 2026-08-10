@@ -159,7 +159,14 @@ const legalLinks = [
       >
         <p class="font-sans text-caption text-inverse-on-surface/40">
           © {{ currentYear }} Klara Wantiez. Tous droits réservés.
-          Site réalisé avec Nuxt 3 & Tailwind CSS.
+          · Site par
+          <a
+            href="https://www.linkedin.com/in/julien-deprez-5005a7253/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition-colors hover:text-inverse-on-surface/70 underline underline-offset-2"
+            aria-label="Julien Deprez, développeur web — profil LinkedIn"
+          >Julien Deprez</a>
         </p>
       </div>
 
