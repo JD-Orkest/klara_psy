@@ -1,0 +1,35 @@
+# Dépendances Node.js
+node_modules/
+
+# Fichiers de build Nuxt 3
+.nuxt/
+.output/
+dist/
+
+# Variables d'environnement locales (ne jamais commit les secrets !)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+*.bak
+
+# TypeScript
+*.tsbuildinfo
+.output/
+dist/

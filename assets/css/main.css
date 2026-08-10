@@ -1,0 +1,111 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Styles globaux — Klara Wantiez | Psychologue
+   Système de design : "Serene Clinical Identity"
+   Philosophie : Minimalisme organique · Blanc chaud · Espaces respirants
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Couche Base : réinitialisation et styles fondamentaux ─────────────────── */
+@layer base {
+  /* Défilement fluide pour les ancres de navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Corps : fond Albâtre Chaud (#f7fafb), texte Charbon Profond (#181c1d) */
+  body {
+    @apply font-sans text-on-surface bg-surface antialiased;
+  }
+
+  /* Titres → Police serif Literata pour un ton élégant et autoritaire */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+  }
+
+  /* Rendu des polices optimisé sur tous les navigateurs (Cumulative Layout Shift) */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus visible pour l'accessibilité WCAG AA */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+/* ── Couche Composants : patterns réutilisables ────────────────────────────── */
+@layer components {
+  /* Conteneur centré — max 1120px avec marges adaptatives */
+  .container-klara {
+    @apply mx-auto w-full max-w-container px-5 md:px-8 lg:px-16;
+  }
+
+  /* ── Boutons ─────────────────────────────────────────────────────────────── */
+
+  /* Bouton principal — Sauge douce (actions de marque, navigation) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-full bg-primary px-8 py-3.5
+           font-sans text-label-md text-on-primary tracking-widest uppercase
+           transition-all duration-200
+           hover:bg-primary/90 hover:shadow-ambient
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
+           active:scale-[0.98];
+  }
+
+  /* Bouton secondaire — Terracotta (CTA émotionnel, prise de RDV) */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-full bg-secondary px-8 py-3.5
+           font-sans text-label-md text-on-secondary tracking-widest uppercase
+           transition-all duration-200
+           hover:bg-secondary/90 hover:shadow-ambient
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary
+           active:scale-[0.98];
+  }
+
+  /* Bouton fantôme / contour — actions secondaires discrètes */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-full border border-on-surface/30 px-8 py-3.5
+           font-sans text-label-md text-on-surface tracking-widest uppercase
+           transition-all duration-200
+           hover:bg-surface-container hover:border-on-surface/50
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
+           active:scale-[0.98];
+  }
+
+  /* ── Typographie sémantique ──────────────────────────────────────────────── */
+
+  /* Étiquette de section (ex: "MA DÉMARCHE") */
+  .section-label {
+    @apply font-sans text-label-md text-primary tracking-[0.1em] uppercase;
+  }
+
+  /* Titre principal de section */
+  .section-title {
+    @apply font-serif text-headline-md font-medium text-on-surface;
+  }
+
+  /* Sous-titre de section */
+  .section-subtitle {
+    @apply font-sans text-body-lg text-on-surface-variant;
+  }
+
+  /* ── Élévation tonale ────────────────────────────────────────────────────── */
+
+  /* Carte avec élévation douce (contour + ombre ambiante) */
+  .card-tonal {
+    @apply rounded-xl bg-surface-container-low
+           border border-outline-variant
+           shadow-ambient
+           transition-all duration-300;
+  }
+}

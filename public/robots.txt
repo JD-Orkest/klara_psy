@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (à générer avec @nuxtjs/sitemap si nécessaire)
+# Sitemap: https://klara-wantiez.be/sitemap.xml

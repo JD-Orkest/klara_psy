@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Workflow GitHub Actions — Déploiement automatique sur GitHub Pages
+# Klara Wantiez | Psychologue
+#
+# 📌 PRÉREQUIS AVANT D'ACTIVER CE WORKFLOW :
+#
+#   1. Sur GitHub, allez dans Settings > Pages de votre dépôt
+#   2. Source : "Deploy from a branch"
+#   3. Branch : gh-pages / root → Sauvegardez
+#
+#   4. Modifiez NUXT_APP_BASE_URL selon votre cas :
+#      • Repo GitHub (sans domaine perso) : /nom-exact-du-repo/
+#        Exemple si votre repo s'appelle "klara-psy" : /klara-psy/
+#      • Domaine personnalisé (klara-wantiez.be) : /
+#        Et créez un fichier public/CNAME contenant : klara-wantiez.be
+#
+# 🔄 DÉCLENCHEMENT :
+#   • Automatiquement à chaque push sur la branche "main"
+#   • Manuellement via l'interface GitHub Actions (workflow_dispatch)
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: 🚀 Déploiement GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # Déclenché à chaque push sur main
+  workflow_dispatch:   # Déclenchement manuel depuis l'interface GitHub
+
+# Permissions pour écrire sur la branche gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy sur GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── Étape 1 : Récupération du code source ───────────────────────────────
+      - name: 📥 Checkout du code source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Historique complet pour les outils de déploiement
+
+      # ── Étape 2 : Installation de Node.js 20 LTS ────────────────────────────
+      - name: ⚙️ Configuration de Node.js 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'   # Mise en cache npm → accélère les builds suivants
+
+      # ── Étape 3 : Installation des dépendances ──────────────────────────────
+      # npm ci (vs npm install) = installation reproductible depuis package-lock.json
+      - name: 📦 Installation des dépendances (npm ci)
+        run: npm ci
+
+      # ── Étape 4 : Génération du site statique ───────────────────────────────
+      # nuxt generate → produit les fichiers HTML statiques dans .output/public/
+      - name: 🏗️ Génération du site statique (nuxt generate)
+        run: npm run generate
+        env:
+          # Repo GitHub : JD-Orkest/klara_psy → base URL = /klara_psy/
+          NUXT_APP_BASE_URL: /klara_psy/
+
+      # ── Étape 5 : Fichier .nojekyll ─────────────────────────────────────────
+      # Empêche GitHub Pages de traiter les fichiers commençant par "_"
+      # (nécessaire pour les fichiers _nuxt/ générés par Nuxt 3)
+      - name: 📄 Création du fichier .nojekyll
+        run: touch .output/public/.nojekyll
+
+      # ── Étape 6 : Déploiement sur gh-pages ──────────────────────────────────
+      - name: 🌐 Déploiement sur la branche gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.output/public
+          publish_branch: gh-pages
+          # Message de commit incluant le message du push original
+          commit_message: '🚀 deploy: ${{ github.event.head_commit.message }}'
+          # Supprime les anciens fichiers non présents dans le nouveau build
+          force_orphan: true
