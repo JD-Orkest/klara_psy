@@ -17,9 +17,9 @@ const contactItems = [
   {
     id: 'phone',
     label: 'Téléphone',
-    value: '+32 478 17 08 81',
+    value: '+32 473 17 06 94',
     // tel: → déclenche l'appel téléphonique sur mobile
-    href: 'tel:+32478170881',
+    href: 'tel:+32473170694',
   },
 ] as const
 </script>
@@ -103,12 +103,12 @@ const contactItems = [
             </svg>
           </div>
           <a
-            href="tel:+32478170881"
+            href="tel:+32473170694"
             class="font-sans text-body-md text-on-surface-variant text-center
                    transition-colors hover:text-primary"
             aria-label="Appeler Klara Wantiez"
           >
-            +32 478 17 08 81
+            +32 473 17 06 94
           </a>
         </div>
 

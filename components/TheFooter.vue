@@ -97,12 +97,12 @@ const legalLinks = [
             <p>
               <!-- tel: → déclenche l'appel téléphonique sur mobile -->
               <a
-                href="tel:+32478170881"
+                href="tel:+32473170694"
                 class="text-inverse-on-surface/80 transition-colors
                        hover:text-inverse-on-surface"
-                aria-label="Appeler Klara Wantiez au +32 478 17 08 81"
+                aria-label="Appeler Klara Wantiez au +32 473 17 06 94"
               >
-                +32 478 17 08 81
+                +32 473 17 06 94
               </a>
             </p>
             <!-- AddressOpener → clic = choix Google Maps / Plans / Waze -->

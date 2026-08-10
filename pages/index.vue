@@ -46,7 +46,7 @@ useHead({
         '@type': 'MedicalBusiness',
         name: 'Klara Wantiez - Psychologue',
         description: "Psychologue clinicienne spécialisée dans l'enfance et l'adolescence. Accompagnement pour enfants, adolescents et jeunes adultes à Anderlues.",
-        telephone: '+32478170881',
+        telephone: '+32473170694',
         email: 'klara.wantiez@outlook.com',
         url: 'https://klara-wantiez.be',
         priceRange: '€€',
