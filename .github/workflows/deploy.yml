@@ -43,18 +43,19 @@ jobs:
         with:
           fetch-depth: 0   # Historique complet pour les outils de déploiement
 
-      # ── Étape 2 : Installation de Node.js 20 LTS ────────────────────────────
-      - name: ⚙️ Configuration de Node.js 20 LTS
+      # ── Étape 2 : Installation de Node.js 22 LTS ──────────────────────────────────────
+      # Node 22 requis : rollup-plugin-visualizer@7 exige node>=22
+      - name: ⚙️ Configuration de Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'   # Mise en cache npm → accélère les builds suivants
+          node-version: '22'
 
-      # ── Étape 3 : Installation des dépendances ──────────────────────────────
-      # npm install (vs npm ci) : plus tolérant aux écarts de version du lock file
-      # entre différentes versions de npm (local npm 12 vs CI npm 10)
+      # ── Étape 3 : Installation des dépendances ──────────────────────────────────────
+      # On supprime d'abord le lock file généré sur macOS ARM :
+      # les bindings natifs oxc-parser diffèrent entre darwin-arm64 et linux-x64.
+      # Sans lock file, npm résout les dépendances pour la plateforme CI (Linux x64).
       - name: 📦 Installation des dépendances
-        run: npm install
+        run: rm -f package-lock.json && npm install
 
       # ── Étape 4 : Génération du site statique ───────────────────────────────
       # nuxt generate → produit les fichiers HTML statiques dans .output/public/
