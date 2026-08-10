@@ -51,9 +51,10 @@ jobs:
           cache: 'npm'   # Mise en cache npm → accélère les builds suivants
 
       # ── Étape 3 : Installation des dépendances ──────────────────────────────
-      # npm ci (vs npm install) = installation reproductible depuis package-lock.json
-      - name: 📦 Installation des dépendances (npm ci)
-        run: npm ci
+      # npm install (vs npm ci) : plus tolérant aux écarts de version du lock file
+      # entre différentes versions de npm (local npm 12 vs CI npm 10)
+      - name: 📦 Installation des dépendances
+        run: npm install
 
       # ── Étape 4 : Génération du site statique ───────────────────────────────
       # nuxt generate → produit les fichiers HTML statiques dans .output/public/
