@@ -1,0 +1,105 @@
+<!--
+  placeholder-cabinet.svg
+  Placeholder visuel pour l'intérieur du cabinet thérapeutique.
+
+  TODO: Remplacer ce fichier par l'image réelle optimisée :
+    • Nom de fichier cible : cabinet-interieur.webp (et cabinet-interieur.avif)
+    • Dimensions : 800×600px minimum (ratio 4:3)
+    • Format : WebP avec fallback AVIF pour navigateurs modernes
+    • Compression : ≤ 80KB pour un score PageSpeed Insights optimal
+    • Outil suggéré : squoosh.app ou sharp (Node.js)
+    • Dans Hero.vue, changer src="/images/placeholder-cabinet.svg"
+      en src="/images/cabinet-interieur.webp"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 800 600"
+  width="800"
+  height="600"
+  role="img"
+  aria-label="Placeholder — Intérieur du cabinet de psychologie"
+>
+  <!-- Fond Albâtre Chaud -->
+  <rect width="800" height="600" fill="#f1f4f5"/>
+
+  <!-- Mur du fond (légèrement plus chaud) -->
+  <rect x="0" y="0" width="800" height="400" fill="#ebeeef"/>
+
+  <!-- Sol (parquet clair) -->
+  <rect x="0" y="400" width="800" height="200" fill="#e0ddd8"/>
+  <!-- Lignes de parquet -->
+  <line x1="0" y1="420" x2="800" y2="420" stroke="#d5d1cb" stroke-width="1"/>
+  <line x1="0" y1="450" x2="800" y2="450" stroke="#d5d1cb" stroke-width="1"/>
+  <line x1="0" y1="480" x2="800" y2="480" stroke="#d5d1cb" stroke-width="1"/>
+  <line x1="0" y1="510" x2="800" y2="510" stroke="#d5d1cb" stroke-width="1"/>
+  <line x1="0" y1="540" x2="800" y2="540" stroke="#d5d1cb" stroke-width="1"/>
+  <line x1="200" y1="400" x2="200" y2="600" stroke="#d5d1cb" stroke-width="0.5"/>
+  <line x1="400" y1="400" x2="400" y2="600" stroke="#d5d1cb" stroke-width="0.5"/>
+  <line x1="600" y1="400" x2="600" y2="600" stroke="#d5d1cb" stroke-width="0.5"/>
+
+  <!-- Fenêtre (lumière naturelle) -->
+  <rect x="500" y="50" width="220" height="280" rx="4" fill="#dde8ec"/>
+  <rect x="504" y="54" width="212" height="272" rx="2" fill="#e8f2f5"/>
+  <!-- Croix de fenêtre -->
+  <line x1="610" y1="54" x2="610" y2="326" stroke="#c8d8dc" stroke-width="2"/>
+  <line x1="504" y1="190" x2="716" y2="190" stroke="#c8d8dc" stroke-width="2"/>
+  <!-- Reflet de lumière -->
+  <rect x="510" y="60" width="50" height="120" rx="2" fill="white" fill-opacity="0.3"/>
+
+  <!-- Canapé / Fauteuil thérapeutique -->
+  <rect x="80" y="300" width="300" height="120" rx="12" fill="#c2c8c4"/>
+  <rect x="80" y="280" width="300" height="40" rx="8" fill="#b0b8b4"/>
+  <!-- Accoudoirs -->
+  <rect x="70" y="300" width="30" height="90" rx="6" fill="#adb5b1"/>
+  <rect x="360" y="300" width="30" height="90" rx="6" fill="#adb5b1"/>
+  <!-- Coussins -->
+  <rect x="100" y="295" width="80" height="70" rx="6" fill="#d1e8dd" fill-opacity="0.7"/>
+  <rect x="200" y="295" width="80" height="70" rx="6" fill="#fdaa83" fill-opacity="0.5"/>
+  <rect x="300" y="295" width="60" height="70" rx="6" fill="#d1e8dd" fill-opacity="0.7"/>
+
+  <!-- Petite table basse -->
+  <rect x="200" y="390" width="120" height="15" rx="4" fill="#b7997d"/>
+  <rect x="208" y="405" width="8" height="25" rx="2" fill="#a08465"/>
+  <rect x="306" y="405" width="8" height="25" rx="2" fill="#a08465"/>
+  <!-- Objet sur la table (plante / tasse) -->
+  <ellipse cx="250" cy="386" rx="15" ry="8" fill="#4e635a" fill-opacity="0.4"/>
+  <rect x="242" y="374" width="16" height="12" rx="3" fill="#4e635a" fill-opacity="0.5"/>
+
+  <!-- Plante décorative -->
+  <rect x="660" y="310" width="20" height="90" rx="2" fill="#b7997d"/>
+  <ellipse cx="670" cy="305" rx="35" ry="45" fill="#4e635a" fill-opacity="0.25"/>
+  <ellipse cx="650" cy="290" rx="22" ry="30" fill="#4e635a" fill-opacity="0.2"/>
+  <ellipse cx="690" cy="285" rx="20" ry="28" fill="#4e635a" fill-opacity="0.2"/>
+  <!-- Pot -->
+  <rect x="655" y="390" width="30" height="20" rx="3" fill="#8d6e50"/>
+
+  <!-- Tableau sur le mur -->
+  <rect x="70" y="80" width="140" height="100" rx="4" fill="white" stroke="#c2c8c4" stroke-width="2"/>
+  <rect x="78" y="88" width="124" height="84" rx="2" fill="#d1e8dd" fill-opacity="0.6"/>
+  <ellipse cx="140" cy="130" rx="30" ry="20" fill="#4e635a" fill-opacity="0.15"/>
+  <ellipse cx="155" cy="120" rx="18" ry="25" fill="#4e635a" fill-opacity="0.12"/>
+
+  <!-- Texte placeholder -->
+  <rect x="220" y="490" width="360" height="50" rx="8" fill="white" fill-opacity="0.6"/>
+  <text
+    x="400"
+    y="510"
+    text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="13"
+    fill="#424845"
+    font-style="italic"
+  >
+    TODO : Photo de l'intérieur du cabinet
+  </text>
+  <text
+    x="400"
+    y="528"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="11"
+    fill="#727875"
+  >
+    Remplacer par cabinet-interieur.webp (800×600px, ≤80KB)
+  </text>
+</svg>

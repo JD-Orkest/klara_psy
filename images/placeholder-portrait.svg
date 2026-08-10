@@ -1,0 +1,113 @@
+<!--
+  placeholder-portrait.svg
+  Placeholder visuel pour la photo portrait de Klara Wantiez.
+
+  TODO: Remplacer ce fichier par la photo professionnelle réelle :
+    • Nom de fichier cible : klara-wantiez-portrait.webp (et .avif)
+    • Dimensions : 600×750px (ratio 4:5, format portrait)
+    • Format : WebP compressé ≤ 100KB
+    • Cadrage : buste ou 3/4, fond neutre ou flou, tenue professionnelle
+    • Outil de compression : squoosh.app (qualité WebP 80-85%)
+    • Dans Approach.vue, changer src="/images/placeholder-portrait.svg"
+      en src="/images/klara-wantiez-portrait.webp"
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 750"
+  width="600"
+  height="750"
+  role="img"
+  aria-label="Placeholder — Portrait de Klara Wantiez, psychologue"
+>
+  <!-- Fond doux surface-container-low -->
+  <rect width="600" height="750" fill="#f1f4f5"/>
+
+  <!-- Dégradé de fond subtil -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ebeeef"/>
+      <stop offset="100%" stop-color="#d7dadb"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgGrad)"/>
+
+  <!-- Décoration — cercle Sauge en arrière-plan -->
+  <circle cx="300" cy="280" r="200" fill="#4e635a" fill-opacity="0.06"/>
+  <circle cx="480" cy="600" r="160" fill="#fdaa83" fill-opacity="0.08"/>
+
+  <!-- Silhouette simplifiée — corps -->
+  <!-- Buste / veste -->
+  <path
+    d="M 160 750 L 140 560 Q 130 480 200 450 L 300 430 L 400 450 Q 470 480 460 560 L 440 750 Z"
+    fill="#4e635a"
+    fill-opacity="0.18"
+  />
+  <!-- Col / chemise -->
+  <path
+    d="M 255 450 L 300 500 L 345 450 L 300 430 Z"
+    fill="white"
+    fill-opacity="0.5"
+  />
+
+  <!-- Cou -->
+  <rect x="275" y="390" width="50" height="55" rx="10" fill="#c2a882" fill-opacity="0.5"/>
+
+  <!-- Tête (silhouette) -->
+  <ellipse cx="300" cy="310" rx="110" ry="130" fill="#c2a882" fill-opacity="0.4"/>
+
+  <!-- Cheveux -->
+  <ellipse cx="300" cy="220" rx="115" ry="80" fill="#5c3d1e" fill-opacity="0.25"/>
+  <path
+    d="M 185 280 Q 175 200 300 185 Q 425 200 415 280 Q 420 180 300 165 Q 180 180 185 280 Z"
+    fill="#5c3d1e"
+    fill-opacity="0.2"
+  />
+
+  <!-- Visage — traits simplifiés -->
+  <!-- Yeux -->
+  <ellipse cx="270" cy="295" rx="12" ry="8" fill="#424845" fill-opacity="0.3"/>
+  <ellipse cx="330" cy="295" rx="12" ry="8" fill="#424845" fill-opacity="0.3"/>
+  <!-- Sourire -->
+  <path
+    d="M 275 345 Q 300 365 325 345"
+    stroke="#424845"
+    stroke-opacity="0.3"
+    stroke-width="3"
+    fill="none"
+    stroke-linecap="round"
+  />
+
+  <!-- Texte placeholder -->
+  <rect x="100" y="630" width="400" height="80" rx="10" fill="white" fill-opacity="0.65"/>
+  <text
+    x="300"
+    y="656"
+    text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="14"
+    fill="#424845"
+    font-style="italic"
+  >
+    TODO : Photo de Klara Wantiez
+  </text>
+  <text
+    x="300"
+    y="676"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="11"
+    fill="#727875"
+  >
+    Psychologue clinicienne infanto-juvénile
+  </text>
+  <text
+    x="300"
+    y="695"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="10"
+    fill="#c2c8c4"
+  >
+    Remplacer par klara-wantiez-portrait.webp (600×750px, ≤100KB)
+  </text>
+</svg>
